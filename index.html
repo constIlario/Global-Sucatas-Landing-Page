@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GS Global Sucatas</title>
+  <meta name="description" content="GS Global Sucatas - Reciclagem inteligente e sustentável.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body { font-family: 'Inter', sans-serif; background: #000; color: #fff; line-height: 1.6; overflow-x: hidden; }
+    
+    /* Header minimalista */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 60px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+    header h1 { font-weight: 800; font-size: 24px; color: #fff; }
+    nav button {
+      margin-left: 12px; padding: 8px 14px;
+      border: 1px solid #fff; border-radius: 50px;
+      background: transparent; color: #fff; cursor: pointer;
+      font-weight: 600; transition: all 0.3s;
+    }
+    nav button:hover { background: #fff; color: #000; }
+
+    /* Hero com vídeo */
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: none
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      z-index: 2;
+      padding: 40px 30px;
+      text-align: center;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+    .hero h2 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; color: #fff; }
+    .hero p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; }
+    .btn-hero {
+      padding: 14px 36px;
+      border-radius: 50px;
+      border: 1px solid #fff;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-hero:hover { background: #fff; color: #000; transform: scale(1.05); }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Seções minimalistas */
+    section {
+      padding: 100px 60px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 50px;
+      color: #fff;
+      font-weight: 700;
+    }
+    section p { text-align: center; max-width: 900px; margin: auto; opacity: 0.85; }
+
+    /* Cards minimalistas */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 30px;
+      border-radius: 16px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+    .card h4 { margin-bottom: 15px; font-weight: 700; color: #fff; }
+
+    /* Footer minimalista */
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .hero-content { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GS Global Sucatas</h1>
+    <nav>
+      <button onclick="setLanguage('pt')">PT</button>
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('es')">ES</button>
+    </nav>
+  </header>
+
+  <audio id="forest-sound" loop autoplay muted>
+    <source src="" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+  <script>
+    document.addEventListener('click', () => {
+      const audio = document.getElementById('forest-sound');
+      if(audio.paused) {
+        audio.play().catch(e => console.log("Autoplay bloqueado, clique novamente"));
+      }
+    });
+  </script>
+
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="https://www.pexels.com/pt-br/download/video/4937376/" type="video/webm">
+      <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/160701_066_Forest_Trees_1080p.mp438412.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo em segundo plano.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h2>Reciclagem Inteligente, Futuro Sustentável</h2>
+      <p>Há mais de 20 anos transformando alumínio, cobre e sucatas em soluções que movem a economia circular do Brasil e da América do Sul.</p>
+      <a href="#quem-somos" class="btn-hero">Saiba Mais</a>
+    </div>
+  </section>
+
+  <section id="quem-somos">
+    <h3>Quem Somos</h3>
+    <p>GS Global Sucatas, com sede em Blumenau – Santa Catarina, atua há mais de 20 anos no setor de reciclagem e comércio de metais. Consolidamos nossa marca como referência nacional em alumínio, sucata e recicláveis, com seriedade, investimento e credibilidade.</p>
+  </section>
+
+  <section id="operacoes">
+    <h3>Operações e Estrutura</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Capacidade Operacional</h4>
+        <p>Atendemos de 50 a 200 toneladas/mês com processos 100% rastreáveis.</p>
+      </div>
+      <div class="card">
+        <h4>Logística</h4>
+        <p>Frota própria, centros modernos de classificação e gestão integrada para máxima eficiência.</p>
+      </div>
+      <div class="card">
+        <h4>Localização Estratégica</h4>
+        <p>Blumenau – SC, próximo aos corredores de exportação, garantindo resposta rápida e confiável.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mercados">
+    <h3>Mercados Estratégicos</h3>
+    <p>Argentina e outros países da América do Sul fazem parte do nosso plano de crescimento. Atuamos como parceiros confiáveis, com solidez financeira e ampla rede de fornecedores e clientes.</p>
+  </section>
+
+  <section id="sustentabilidade">
+    <h3>Sustentabilidade</h3>
+    <p>Alinhamos nossas operações à economia circular, promovendo redução de resíduos e preservação ambiental. A sustentabilidade é pilar da nossa atuação.</p>
+  </section>
+
+  <section id="contato">
+    <h3>Contato</h3>
+    <p>📍 Blumenau - SC, Brasil<br>📧 contato@gsglobalsucatas</p>
+  </section>
+
+  <footer>
+    &copy; 2025 GS Global Sucatas. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const translations = {
+      en: { "Quem Somos":"About Us", "Operações e Estrutura":"Operations & Structure", "Mercados Estratégicos":"Strategic Markets", "Sustentabilidade":"Sustainability", "Contato":"Contact" },
+      es: { "Quem Somos":"Quiénes Somos", "Operações e Estrutura":"Operaciones y Estructura", "Mercados Estratégicos":"Mercados Estratégicos", "Sustentabilidade":"Sostenibilidad", "Contato":"Contacto" }
+    };
+    function setLanguage(lang) {
+      document.querySelectorAll('h3').forEach(el => {
+        const txt = el.textContent.trim();
+        if (translations[lang][txt]) el.textContent = translations[lang][txt];
+      });
+    }
+  </script>
+</body>
+</html>
